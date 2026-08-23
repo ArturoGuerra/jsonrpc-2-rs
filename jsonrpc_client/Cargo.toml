@@ -1,0 +1,18 @@
+[package]
+name = "jsonrpc_client"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+jsonrpc_core = { path = "../jsonrpc_core" }
+jsonrpc_http_client = { path = "../jsonrpc_http_client", optional = true }
+jsonrpc_ws_client = { path = "../jsonrpc_ws_client", optional = true }
+
+[features]
+http = ["dep:jsonrpc_http_client"]
+ws = ["dep:jsonrpc_ws_client", "jsonrpc_core/bidirectional"]
+full = ["http", "ws"]

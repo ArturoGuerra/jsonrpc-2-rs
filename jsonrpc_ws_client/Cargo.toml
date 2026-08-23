@@ -1,0 +1,26 @@
+[package]
+name = "jsonrpc_ws_client"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+bytes.workspace = true
+jsonrpc_core = { path = "../jsonrpc_core", features = ["bidirectional"] }
+serde = { workspace = true }
+serde_json = { workspace = true }
+stream-tungstenite = "0.6.1"
+tokio = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+dashmap = "6.2.1"
+hotpath.workspace = true
+futures.workspace = true
+smallvec.workspace = true
+
+[features]
+hotpath = ["hotpath/hotpath", "jsonrpc_core/hotpath"]
+hotpath-alloc = ["hotpath/hotpath-alloc", "jsonrpc_core/hotpath-alloc"]

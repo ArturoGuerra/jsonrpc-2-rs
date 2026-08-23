@@ -1,0 +1,22 @@
+[package]
+name = "jsonrpc_cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[[bin]]
+name = "jsonrpc"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.6.5", features = ["derive"] }
+jsonrpc_client = { path = "../jsonrpc_client", features = ["full"] }
+tokio.workspace = true
+anyhow.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+serde.workspace = true

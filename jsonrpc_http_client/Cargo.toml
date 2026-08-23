@@ -1,0 +1,21 @@
+[package]
+name = "jsonrpc_http_client"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow.workspace = true
+jsonrpc_core = { path = "../jsonrpc_core" }
+reqwest = "0.13.4"
+serde.workspace = true
+serde_json.workspace = true
+hotpath.workspace = true
+tracing.workspace = true
+smallvec.workspace = true
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["macros"] }
